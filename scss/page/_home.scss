@@ -1,0 +1,298 @@
+@use '../abstract/' as *;
+@use '../base/' as *;
+@use '../component/' as *;
+@use '../layout/' as *;
+@use '../vendor/' as *;
+
+ 
+
+.banner{
+    min-height: 100vh;
+    background-image: url('../../images/Untitled\ design.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+   background-position: center;
+
+}
+
+.header{
+    margin: 0 10rem;
+&__wrapper{
+    @include mediaQuery{
+        justify-content: space-between;
+        align-items: center;
+       nav{
+            display: none;
+        }
+        
+    }
+    padding: 2rem 4rem;
+ @include flex(center, center);
+   gap: 20rem;
+    ul {
+        @include flex(space-between, center);
+        gap: 7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    a{
+        color: $clr-white;
+    }
+    }
+  
+    img{
+        max-width: 10rem;
+        
+    }
+
+    button{
+        border: none;
+        padding: 1rem;
+        background: $clr-accent;
+       border-radius: .5rem;
+        a{
+           color: $clr-white;
+           font-family: cd-regular;
+           font-weight: 500;
+        }
+       }
+}
+}
+
+.banner__info{
+    text-align: center;
+    margin-top: 15rem;
+    h1{
+        font-size:clamp(6rem, 6vw, 4rem);
+    }
+    h1,p{
+         line-height: 1;
+        color: $clr-white;
+    }
+}
+
+.imagebanner{
+    img{
+        align-items: center;
+    }
+}
+.order
+{
+    padding: 5rem 0;
+
+  
+    h2
+    {
+        text-align: center;
+        color: $clr-secondary;
+        text-transform: uppercase;
+        font-size:clamp(3rem, 6vw, 5rem);
+    }
+
+    ul
+    {
+        @include flex(center, center);
+        gap: 2rem;
+
+        @include mediaQuery
+        {
+            @include flex(center, center);
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        li
+        {
+            h4
+            {
+              text-align: center;
+              margin-bottom: 0;
+            }
+
+            i
+            {
+                color: $clr-secondary;
+                font-size: 3rem;
+
+                @include mediaQuery
+                {
+                    transform: rotate(90deg);
+                }
+            }
+
+            img
+            {
+                width: 140px;
+            }
+        }
+    }
+}
+
+.menu {
+    background-image: url(http://www.michiramen.com/img/character_pattern_2X.jpg);
+    padding: 50px 0;
+    @include flex();
+
+    &__title {
+        padding: 50px 0;
+        @include flex(center,center);
+      
+        h2 {
+            font-size:clamp(3rem, 6vw, 5rem);
+            padding-top: 1rem;
+            text-align: center;
+        }
+    }
+
+    &__wrapper {
+        @include mediaQuery{
+            @include grid(1);
+        
+        }
+        @include unevenGrid(1fr 1fr, 3rem);
+        padding-bottom: 150px;
+    }
+
+    &__sub {
+        @include flex;
+        gap: 1rem;
+    }
+
+    &__details {
+       
+        h3 {
+            font-size: 3rem;        
+            margin-bottom: 0rem;
+            font-family: em-regular;
+        }
+
+        h4.price {
+            color: $clr-secondary;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.7;
+            font-family: cd-regular;
+            
+        }
+
+        h4 {
+            font-family: walter-regular;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        li {
+            line-height: 0.2;
+            font-family: cd-regular;
+            font-weight: 700;
+            list-style: none;
+           p{
+            color: $clr-white;
+           }
+        }
+    }
+
+    &__image {
+        img {
+            border-radius: 50%;
+            
+        }
+    }  
+    &__button{
+        margin-top: -10rem;
+        padding-bottom: 3rem;
+        @include flex(center, center);
+        button{
+         border: none;
+         padding: 1rem;
+         background: $clr-lightdark;
+        border-radius: .5rem;
+         a{
+            color: $clr-white;
+            font-family: cd-regular;
+            font-weight: 500;
+         }
+        }
+}
+}
+
+.cta{
+    &__wrapper{
+        padding: 0rem 4rem;
+    }
+    &__title{
+        line-height: 1;
+        h2{
+            color: $clr-secondary;
+            text-align: center;
+            font-size:clamp(3rem, 6vw, 5rem);
+            padding-top: 5rem;
+        }
+        p{
+            text-align: center;
+            color: $clr-accent;
+            text-transform: uppercase;
+        }
+    }
+        .bottom__images{
+            @include flex(center);
+            img{
+                min-width: 65%;
+            }
+            @include mediaQuery{
+             @include grid(1);
+        
+            }
+            
+        }
+}
+
+.footer{
+    background: $clr-lightdark;
+    &__wrapper{
+        @include mediaQuery{
+            @include grid(1);
+            place-items:center;
+        }
+        padding: 7rem 4rem;
+        @include grid(3);
+    }
+   
+    &__socials{
+      
+        ul{
+           align-items: center;
+            color: $clr-accent;
+            @include flex(center);
+            gap: 2rem;
+            font-size: 3rem;
+        }
+    }
+
+    &__info{
+        p{
+            text-align: center;
+            font-family: cd-regular;
+            color: $clr-white;
+            font-weight: 500;
+           
+        }
+    }
+
+    &__button{
+     
+        button{
+           justify-content: center;
+            border: none;
+            padding: 1rem 6rem;
+            background: $clr-accent;
+           border-radius: .5rem;
+            a{
+               color: $clr-white;
+               font-family: cd-regular;
+               font-weight: 500;
+            }
+           }
+}
+    }
